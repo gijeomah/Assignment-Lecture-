@@ -45,7 +45,7 @@ class MusicScene extends Scene{
     }
     renderScene(){
         super.renderScene();
-        music=new Audio(this.audio_path);
+        music.src = this.audio_path;
         music.play()
     }exitScene(){
         super.exitScene();
@@ -55,7 +55,7 @@ class MusicScene extends Scene{
 
 let introScene = new Scene("images.jpg", "Welcome to my flower garden", "click to move around");
 let SceneA = new Scene("images (1).jpg", "Holllow Garden", "Veiw Astonishment");
-let SceneB = new Scene("images (2).jpg", "Amazing field", "Enjoy the Lavender beauty", "Investigations.mp3" );
+let SceneB = new MusicScene("images (2).jpg", "Amazing field", "Enjoy the Lavender beauty", "Investigations.mp3" );
 introScene.setChildren([SceneA,SceneB]);
 SceneA.setChildren([introScene]);
 SceneB.setChildren([SceneA, introScene]);
